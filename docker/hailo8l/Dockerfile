@@ -35,6 +35,7 @@ RUN pip3 install -U /deps/hailo-wheels/*.whl
 
 # Copy base files from the rootfs stage
 COPY --from=rootfs / /
+RUN ldconfig
 
 # Set workdir
 WORKDIR /opt/frigate/

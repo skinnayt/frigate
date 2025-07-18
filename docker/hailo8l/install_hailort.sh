@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-hailo_version="4.19.0"
+hailo_version="4.21.0"
 
 if [[ "${TARGETARCH}" == "amd64" ]]; then
     arch="x86_64"
@@ -10,7 +10,7 @@ elif [[ "${TARGETARCH}" == "arm64" ]]; then
     arch="aarch64"
 fi
 
-wget -qO- "https://github.com/frigate-nvr/hailort/releases/download/v${hailo_version}/hailort-${TARGETARCH}.tar.gz" |
+wget -qO- "https://github.com/frigate-nvr/hailort/releases/download/v${hailo_version}/hailort-debian11-${TARGETARCH}.tar.gz" |
     tar -C / -xzf -
 
 mkdir -p /hailo-wheels
